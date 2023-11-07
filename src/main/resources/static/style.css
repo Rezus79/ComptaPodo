@@ -1,0 +1,22 @@
+
+
+main{
+    min-height: 80vh;
+}
+
+.wrapper {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+footer p{
+    
+    font-size: 12px;
+}
+
+.d-none {
+    display: none !important;
+}
