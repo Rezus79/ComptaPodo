@@ -18,7 +18,7 @@ layout:decorate="~{layouts/main-layout}">
             <form th:action="@{/private/creer}" method="post">
                 <div class="col-4 offset-4 mb-3">
                   <div class="mb-3" >
-                      <label for="type" class="form-label">type d'utilisateur</label>
+                      <label for="type" class="form-label">Type d'utilisateur</label>
       
                       <select class="form-select" id="type" th:field="*{utilisateur.role.id}">
                         <option  value="1">ADMIN </option>
@@ -35,11 +35,11 @@ layout:decorate="~{layouts/main-layout}">
                       <input type="text" class="form-control" id="prenom"  th:field="*{utilisateur.prenom}">
                     </div>
                     <div class="mb-3">
-                      <label for="email" class="form-label">mail</label>
+                      <label for="email" class="form-label">Mail</label>
                       <input type="email" class="form-control" id="email"  th:field="*{utilisateur.email}">
                     </div>
                     <div class="mb-3">
-                      <label for="mdp" class="form-label">mot de passe</label>
+                      <label for="mdp" class="form-label">Mot de passe</label>
                       <input type="password" class="form-control" id="mdp"  th:field="*{utilisateur.motDePasse}">
                     </div>
                   

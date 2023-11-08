@@ -29,7 +29,15 @@ layout:decorate="~{layouts/main-layout}">
             </div>
 
             <div class="text-center mt-3 col-6 offset-3 d-grid">
-                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-outline-secondaryy" ><a class="nav-link" th:href="@{/private/creer}">ajouter un utilisateur</a></button>
+                <button type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/user/impayes}">total par mois</a></button>
+            </div>
+
+            <div class="text-center mt-3 col-6 offset-3 d-grid">
+                <button type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/user/impayes}">total par an</a></button>
+            </div>
+
+            <div class="text-center mt-5 col-6 offset-3 d-grid">
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/private/creer}">ajouter un utilisateur</a></button>
             </div>
 
             <div class="text-center mt-3 col-6 offset-3 d-grid">
