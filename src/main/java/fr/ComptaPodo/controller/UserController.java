@@ -33,6 +33,6 @@ public class UserController {
 	@PostMapping("/private/creer")
 	public String creer(@ModelAttribute Utilisateur utilisateur) {
 		utilisateurService.CreerUtilisateur(utilisateur);
-		return "redirect:/private/menu";
+		return "redirect:/user/menu";
 	}
 }

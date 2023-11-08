@@ -41,7 +41,7 @@ public class HomeController {
 	@PostMapping("/user/nouvelle_fiche")
 	String ficheCompta(@ModelAttribute FicheCompta fiche) {
 		ficheComptaService.CreerFiche(fiche);
-		return "redirect:/private/menu";
+		return "redirect:/user/menu";
 	}
 	
 	@GetMapping("/user/liste")
