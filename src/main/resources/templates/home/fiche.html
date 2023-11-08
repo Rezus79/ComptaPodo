@@ -18,16 +18,16 @@ layout:decorate="~{layouts/main-layout}">
             <form th:action="@{/user/nouvelle_fiche}" method="post">
                 <div class="col-4 offset-4 mb-3">
                   <div class="mb-3" >
-                      <label for="type" class="form-label">type de soin</label>
+                      <label for="type" class="form-label">Type de soin</label>
       
                       <select class="form-select" id="localite" th:field="*{fiche.localite}">
                         <option  value="domicile">Domicile </option>
-                        <option value="cabinet">cabinet </option>
+                        <option value="cabinet">Cabinet </option>
                         
                      </select>
                     </div>
                     <div class="mb-3">
-                        <label for="kilometrage" class="form-label">kilometrage</label>
+                        <label for="kilometrage" class="form-label">Kilometrage</label>
                         <input type="text" class="form-control" id="kilometrage"  th:field="*{fiche.kilometrage}">
                       </div>
                   <div class="mb-3">
@@ -35,25 +35,25 @@ layout:decorate="~{layouts/main-layout}">
                       <input type="text" class="form-control" id="nomPatient"  th:field="*{fiche.nomPatient}">
                     </div>
                     <div class="mb-3">
-                      <label for="facture" class="form-label">facture</label>
+                      <label for="facture" class="form-label">Facture</label>
                       <input type="text" class="form-control" id="facture"  th:field="*{fiche.facture}">
                     </div>
                     <div class="mb-3" >
-                        <label for="type" class="form-label">moyen de payement</label>
+                        <label for="type" class="form-label">Moyen de payement</label>
         
                         <select class="form-select" id="moyenPayement" th:field="*{fiche.moyenPayement}">
-                          <option  value="especes">especes </option>
-                          <option value="cheque">cheque </option>
-                          <option value="virement">virement </option>
+                          <option  value="especes">Especes </option>
+                          <option value="cheque">Cheque </option>
+                          <option value="virement">Virement </option>
                           <option value="pod">POD </option>
                        </select>
                       </div>
                     <div class="mb-3">
-                      <label for="mdp" class="form-label">date du soin</label>
+                      <label for="mdp" class="form-label">dDate du soin</label>
                       <input type="datetime-local" class="form-control" id="dateDuSoin"  th:field="*{fiche.dateDuSoin}">
                     </div>
                   
-                  <input type="submit" value="valider"></input>
+                  <input type="submit" class="btn btn-primary" value="Valider"></input>
                 </div>
               </form>
             

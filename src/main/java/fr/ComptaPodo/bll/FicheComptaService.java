@@ -15,7 +15,7 @@ public interface FicheComptaService {
 	
 	FicheCompta findByNomPatient(String nomPatient);
 	
-	FicheCompta modifierFiche(FicheCompta ficheCompta,Long id);
+	FicheCompta modifierFiche(FicheCompta ficheCompta);
 	
 	void supprimerFiche(Long id);
 	

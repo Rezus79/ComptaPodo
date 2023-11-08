@@ -17,12 +17,16 @@ layout:decorate="~{layouts/main-layout}">
             </div>
                 <form th:action="@{/user/fiche/modifier}" method="post">
                     <div class="col-4 offset-4 mb-3">
+                        <div hidden>
+                            <label for="id" class="form-label">Id</label>
+                            <input type="text" class="form-control"  id="id" th:value="${fiche.id}" th:field="*{fiche.id}"  >
+                        </div>
                         <div class="mb-3" >
-                            <label for="type" class="form-label">type de soin</label>
-                            <input  class="form-control" id="localite" th:value="${fiche.localite}" th:field="*{fiche.localite}" readonly>
+                            <label for="type" class="form-label">Type de soin</label>
+                            <input  class="form-control" id="localite" th:value="${fiche.localite}" th:field="*{fiche.localite}" >
                         </div>
                         <div class="mb-3">
-                            <label for="kilometrage" class="form-label">kilometrage</label>
+                            <label for="kilometrage" class="form-label">Kilometrage</label>
                             <input type="text" class="form-control" id="kilometrage"  th:value="${fiche.kilometrage}" th:field="*{fiche.kilometrage}">
                         </div>
                         <div class="mb-3">
@@ -34,7 +38,7 @@ layout:decorate="~{layouts/main-layout}">
                         <input type="text" class="form-control" id="facture"  th:value="${fiche.facture}" th:field="*{fiche.facture}">
                         </div>
                         <div class="mb-3" >
-                            <label for="type" class="form-label">moyen de payement</label>
+                            <label for="type" class="form-label">Moyen de payement</label>
                               
                             <select class="form-select" id="moyenPayement" th:value="${fiche.moyenPayement}" th:field="*{fiche.moyenPayement}">
                                 <option  value="especes">especes </option>
@@ -44,12 +48,12 @@ layout:decorate="~{layouts/main-layout}">
                              </select>
                         </div>
                         <div class="mb-3">
-                        <label for="mdp" class="form-label">date du soin</label>
-                        <input type="datetime-local" class="form-control" id="dateDuSoin"  th:value="${fiche.dateDuSoin}" readonly>
+                        <label for="mdp" class="form-label">Date du soin</label>
+                        <input type="datetime" class="form-control" id="dateDuSoin"  th:value="${fiche.dateDuSoin}" th:field="*{fiche.dateDuSoin}" >
                         </div>
                         <div class="d-flex ml-3">
-                            <button type="submit" class="btn btn-warning">valider</button>
-                            <button type="button"  class="btn btn-info"><a class="nav-link" th:href="@{/user/impayes}">annuler</a></button>
+                            <button type="submit" class="btn btn-warning">Valider</button>
+                            <button type="button"  class="btn btn-info"><a class="nav-link" th:href="@{/user/menu}">Annuler</a></button>
                         </div>
                     </div>
                 </form>

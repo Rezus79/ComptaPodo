@@ -83,4 +83,10 @@ public class HomeController {
 		
 		return "home/modifier";
 	}
+	
+	@PostMapping("/user/fiche/modifier")
+	String ficheModifier(@ModelAttribute FicheCompta fiche) {
+		ficheComptaService.modifierFiche(fiche);
+		return "redirect:/user/impayes";
+	}
 }

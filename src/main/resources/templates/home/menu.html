@@ -16,24 +16,24 @@ layout:decorate="~{layouts/main-layout}">
                 <h1>Bienvenue sur Compta Podo</h1>
             </div>
             
-            <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/user/nouvelle_fiche}">ajouter une fiche compta</a></button>
+            <div class="text-center mt-3 col-6 offset-3 d-grid">
+                <button type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/user/nouvelle_fiche}">ajouter une fiche compta</a></button>
             </div>
 
-            <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/user/liste}">liste des fiches compta</a></button>
+            <div class="text-center mt-3 col-6 offset-3 d-grid">
+                <button type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/user/liste}">liste des fiches compta</a></button>
             </div>
 
-            <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/user/impayes}">liste des impayés</a></button>
+            <div class="text-center mt-3 col-6 offset-3 d-grid">
+                <button type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/user/impayes}">liste des impayés</a></button>
             </div>
 
-            <div class="text-center mt-3">
-                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/private/creer}">ajouter un utilisateur</a></button>
+            <div class="text-center mt-3 col-6 offset-3 d-grid">
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-outline-secondaryy" ><a class="nav-link" th:href="@{/private/creer}">ajouter un utilisateur</a></button>
             </div>
 
-            <div class="text-center mt-3">
-                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/private/creer}">liste des utilisateurs</a></button>
+            <div class="text-center mt-3 col-6 offset-3 d-grid">
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-outline-secondary" ><a class="nav-link" th:href="@{/private/creer}">liste des utilisateurs</a></button>
             </div>
 
         </main>

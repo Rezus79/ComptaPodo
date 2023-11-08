@@ -45,22 +45,10 @@ public class FicheComptaServiceImpl implements FicheComptaService{
 	}
 
 	@Override
-	public FicheCompta modifierFiche(FicheCompta ficheCompta, Long id) {
-		FicheCompta ficheDB = ficheComptaRepository.findById(id).get();
-
-		if (Objects.nonNull(ficheCompta.getNomPatient()) && !"".equalsIgnoreCase(ficheCompta.getNomPatient())) {
-			ficheDB.setNomPatient(ficheCompta.getNomPatient());
-		}
-//		if (Objects.nonNull(utilisateur.getPrenom()) && !"".equalsIgnoreCase(utilisateur.getPrenom())) {
-//			utilisateurDB.setPrenom(utilisateur.getPrenom());
-//		}
-//		if (Objects.nonNull(utilisateur.getRole())) {
-//			utilisateurDB.setRole(utilisateur.getRole());
-//		}
-//		if (Objects.nonNull(utilisateur.getEmail()) && !"".equalsIgnoreCase(utilisateur.getEmail())) {
-//			utilisateurDB.setEmail(utilisateur.getEmail());
-//		}
-		return ficheComptaRepository.save(ficheDB);
+	public FicheCompta modifierFiche(FicheCompta ficheCompta) {
+		
+		ficheComptaRepository.saveAndFlush(ficheCompta);
+		return null;
 	}
 
 	@Override

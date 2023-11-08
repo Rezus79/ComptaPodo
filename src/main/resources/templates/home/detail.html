@@ -18,11 +18,11 @@ layout:decorate="~{layouts/main-layout}">
             
                 <div class="col-4 offset-4 mb-3">
                     <div class="mb-3" >
-                        <label for="type" class="form-label">type de soin</label>
+                        <label for="type" class="form-label">Type de soin</label>
                         <input  class="form-control" id="localite" th:value="${fiche.localite}" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="kilometrage" class="form-label">kilometrage</label>
+                        <label for="kilometrage" class="form-label">Kilometrage</label>
                         <input type="text" class="form-control" id="kilometrage"  th:value="${fiche.kilometrage}" readonly>
                       </div>
                     <div class="mb-3">
@@ -30,19 +30,19 @@ layout:decorate="~{layouts/main-layout}">
                       <input type="text" class="form-control" id="nomPatient"  th:value="${fiche.nomPatient}" readonly>
                     </div>
                     <div class="mb-3">
-                      <label for="facture" class="form-label">facture</label>
+                      <label for="facture" class="form-label">Facture</label>
                       <input type="text" class="form-control" id="facture"  th:value="${fiche.facture}" readonly>
                     </div>
                     <div class="mb-3" >
-                        <label for="type" class="form-label">moyen de payement</label>
+                        <label for="type" class="form-label">Moyen de payement</label>
                         <input class="form-control" id="moyenPayement" th:value="${fiche.moyenPayement}" readonly>  
                        
                       </div>
                     <div class="mb-3">
-                      <label for="mdp" class="form-label">date du soin</label>
+                      <label for="mdp" class="form-label">Date du soin</label>
                       <input type="datetime-local" class="form-control" id="dateDuSoin"  th:value="${fiche.dateDuSoin}" readonly>
                     </div>
-                  
+                    <button type="button"  class="btn btn-info"><a class="nav-link" th:href="@{/user/menu}">Retour</a></button>
                   
                 </div>
 
