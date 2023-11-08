@@ -11,7 +11,7 @@ public interface FicheComptaService {
 	
 	List<FicheCompta> consulterFiches();
 	
-	Optional<FicheCompta> getFicheById(Long id);
+	FicheCompta getFicheById(Long id);
 	
 	FicheCompta findByNomPatient(String nomPatient);
 	

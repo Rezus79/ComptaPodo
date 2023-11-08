@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.ComptaPodo.bll.FicheComptaService;
 import fr.ComptaPodo.bo.FicheCompta;
+import jakarta.websocket.server.PathParam;
 
 @Controller
 @RequestMapping("/")
@@ -51,5 +52,35 @@ public class HomeController {
 		
 		model.addAttribute("fiches", fiches);
 		return "home/liste";
+	}
+	
+	@GetMapping("/user/impayes")
+	String listeImpayes(Model model) {
+		List<FicheCompta> fiches = new ArrayList<FicheCompta>();
+		List<FicheCompta> impayes = new ArrayList<FicheCompta>();
+		fiches.addAll(ficheComptaService.consulterFiches());
+		
+		for (FicheCompta fiche : fiches) {
+			if (fiche.getFacture() == 0) {
+				impayes.add(fiche);
+			}
+		}
+		
+		model.addAttribute("fiches", impayes);
+		return "home/impayes";
+	}
+	
+	@GetMapping("/user/fiche/detail")
+	String ficheDetail(@PathParam("id") long id, Model model) {
+		model.addAttribute("fiche", ficheComptaService.getFicheById(id));
+		
+		return "home/detail";
+	}
+	
+	@GetMapping("/user/fiche/modifier")
+	String ficheModifier(@PathParam("id") long id, Model model) {
+		model.addAttribute("fiche", ficheComptaService.getFicheById(id));
+		
+		return "home/modifier";
 	}
 }

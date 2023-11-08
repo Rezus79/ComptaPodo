@@ -25,11 +25,15 @@ layout:decorate="~{layouts/main-layout}">
             </div>
 
             <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/private/creer}">ajouter un utilisateur</a></button>
+                <button type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/user/impayes}">liste des impayés</a></button>
             </div>
 
             <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/private/creer}">liste des utilisateurs</a></button>
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/private/creer}">ajouter un utilisateur</a></button>
+            </div>
+
+            <div class="text-center mt-3">
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')}" type="button" class="btn btn-primary" ><a class="nav-link" th:href="@{/private/creer}">liste des utilisateurs</a></button>
             </div>
 
         </main>

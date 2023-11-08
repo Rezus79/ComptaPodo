@@ -33,9 +33,9 @@ public class FicheComptaServiceImpl implements FicheComptaService{
 	}
 
 	@Override
-	public Optional<FicheCompta> getFicheById(Long id) {
-		// TODO Auto-generated method stub
-		return ficheComptaRepository.findById(id);
+	public FicheCompta getFicheById(Long id) {
+		Optional<FicheCompta> ficheOptional = ficheComptaRepository.findById(id);
+	    return ficheOptional.orElse(null); 
 	}
 
 	@Override

@@ -10,4 +10,6 @@ public interface FicheComptaRepository extends JpaRepository<FicheCompta, Long>{
 
 	
 	FicheCompta findByNomPatient(String nomPatient);
+	
+	
 }

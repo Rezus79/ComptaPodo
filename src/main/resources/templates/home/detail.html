@@ -13,49 +13,39 @@ layout:decorate="~{layouts/main-layout}">
 	  
 	    <main layout:fragment="content">
             <div class="text-center mt-5 mb-5">
-                <h1>créer une nouvelle fiche</h1>
+                <h1>detail de la fiche</h1>
             </div>
-            <form th:action="@{/user/nouvelle_fiche}" method="post">
+            
                 <div class="col-4 offset-4 mb-3">
-                  <div class="mb-3" >
-                      <label for="type" class="form-label">type de soin</label>
-      
-                      <select class="form-select" id="localite" th:field="*{fiche.localite}">
-                        <option  value="domicile">Domicile </option>
-                        <option value="cabinet">cabinet </option>
-                        
-                     </select>
+                    <div class="mb-3" >
+                        <label for="type" class="form-label">type de soin</label>
+                        <input  class="form-control" id="localite" th:value="${fiche.localite}" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="kilometrage" class="form-label">kilometrage</label>
-                        <input type="text" class="form-control" id="kilometrage"  th:field="*{fiche.kilometrage}">
+                        <input type="text" class="form-control" id="kilometrage"  th:value="${fiche.kilometrage}" readonly>
                       </div>
-                  <div class="mb-3">
+                    <div class="mb-3">
                       <label for="nom" class="form-label">Nom du patient</label>
-                      <input type="text" class="form-control" id="nomPatient"  th:field="*{fiche.nomPatient}">
+                      <input type="text" class="form-control" id="nomPatient"  th:value="${fiche.nomPatient}" readonly>
                     </div>
                     <div class="mb-3">
                       <label for="facture" class="form-label">facture</label>
-                      <input type="text" class="form-control" id="facture"  th:field="*{fiche.facture}">
+                      <input type="text" class="form-control" id="facture"  th:value="${fiche.facture}" readonly>
                     </div>
                     <div class="mb-3" >
                         <label for="type" class="form-label">moyen de payement</label>
-        
-                        <select class="form-select" id="moyenPayement" th:field="*{fiche.moyenPayement}">
-                          <option  value="especes">especes </option>
-                          <option value="cheque">cheque </option>
-                          <option value="virement">virement </option>
-                          <option value="pod">POD </option>
-                       </select>
+                        <input class="form-control" id="moyenPayement" th:value="${fiche.moyenPayement}" readonly>  
+                       
                       </div>
                     <div class="mb-3">
                       <label for="mdp" class="form-label">date du soin</label>
-                      <input type="datetime-local" class="form-control" id="dateDuSoin"  th:field="*{fiche.dateDuSoin}">
+                      <input type="datetime-local" class="form-control" id="dateDuSoin"  th:value="${fiche.dateDuSoin}" readonly>
                     </div>
                   
-                  <input type="submit" value="valider"></input>
+                  
                 </div>
-              </form>
+
             
         </main>
 

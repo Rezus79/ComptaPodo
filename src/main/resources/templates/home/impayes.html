@@ -13,7 +13,7 @@ layout:decorate="~{layouts/main-layout}">
 	  
 	    <main layout:fragment="content">
             <div class="row text-center mt-5">
-                <h1>voici la liste des fiches compta</h1>
+                <h1>voici la liste des fiches compta impayées</h1>
             </div>
             <div class="row mt-3">
                 <div class="col-8 offset-2 bg-light">
@@ -29,8 +29,8 @@ layout:decorate="~{layouts/main-layout}">
                                 <td th:text="${fiche.localite}"></td>
                                
                                 <td class=" text-center">
-                                    <a class="btn btn-info" ><i > Detail</i></a>
-                                    <a class="btn btn-warning" ><i > Modifier</i></a>
+                                    <a class="btn btn-info" th:href="@{/user/fiche/detail(id=${fiche.id})}"><i > Detail</i></a>
+                                    <a class="btn btn-warning" th:href="@{/user/fiche/modifier(id=${fiche.id})}"><i > Modifier</i></a>
                                 </td>
                             </tr>
     
