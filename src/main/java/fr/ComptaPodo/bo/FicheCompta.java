@@ -2,8 +2,8 @@ package fr.ComptaPodo.bo;
 
 
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,7 +30,7 @@ public class FicheCompta {
 	private String localite;
 	
 	@Column(nullable = false)
-	private float facture;
+	private Double facture;
 	
 	@Column(nullable = false)
 	private String moyenPayement;
@@ -42,7 +42,7 @@ public class FicheCompta {
 	public FicheCompta() {}
 
 
-	public FicheCompta(Long id, String nomPatient, String localite, float facture, String moyenPayement,
+	public FicheCompta(Long id, String nomPatient, String localite, Double facture, String moyenPayement,
 			LocalDateTime dateDuSoin) {
 		this.id = id;
 		this.nomPatient = nomPatient;
@@ -83,12 +83,12 @@ public class FicheCompta {
 	}
 
 
-	public float getFacture() {
+	public Double getFacture() {
 		return facture;
 	}
 
 
-	public void setFacture(float facture) {
+	public void setFacture(Double facture) {
 		this.facture = facture;
 	}
 
