@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.ComptaPodo.bll.FicheComptaService;
 import fr.ComptaPodo.bo.FicheCompta;
@@ -121,26 +122,72 @@ public class HomeController {
 		return "home/mois";
 	}
 	
+//	@GetMapping("/user/annee")
+//	String totalAnnee(Model model) {
+//		List<FicheCompta> fiches = new ArrayList<FicheCompta>();
+//		fiches.addAll(ficheComptaService.consulterFiches());
+//		double total = 0 ;
+//		int totalFiches = 0;
+//		int annee = LocalDate.now().getYear();
+//		for (FicheCompta fiche : fiches) {
+//			if (fiche.getDateDuSoin().getYear() == annee) {
+//			
+//				total += fiche.getFacture();
+//				totalFiches += 1;
+//			}
+//		}
+//		
+//		
+//		
+//		model.addAttribute("total", total);
+//		model.addAttribute("totalFiches", totalFiches);
+//		return "home/annee";
+//	}
+//	
+//	@PostMapping("/user/annee")
+//	String totalAnnee(@RequestParam("annee") int annee, Model model) {
+//		List<FicheCompta> fiches = new ArrayList<FicheCompta>();
+//		fiches.addAll(ficheComptaService.consulterFiches());
+//		double total = 0 ;
+//		int totalFiches = 0;
+//		for (FicheCompta fiche : fiches) {
+//			if (fiche.getDateDuSoin().getYear() == annee) {
+//			
+//				total += fiche.getFacture();
+//				totalFiches += 1;
+//			}
+//		}
+//		
+//		model.addAttribute("total", total);
+//		model.addAttribute("totalFiches", totalFiches);
+//		return "home/annee";
+//	}
+	
 	@GetMapping("/user/annee")
 	String totalAnnee(Model model) {
-		List<FicheCompta> fiches = new ArrayList<FicheCompta>();
-		fiches.addAll(ficheComptaService.consulterFiches());
-		double total = 0 ;
-		int totalFiches = 0;
-		int annee = LocalDate.now().getYear();
-		for (FicheCompta fiche : fiches) {
-			if (fiche.getDateDuSoin().getYear() == annee) {
-			
-				total += fiche.getFacture();
-				totalFiches += 1;
-			}
-		}
-		
-		
-		
-		model.addAttribute("total", total);
-		model.addAttribute("totalFiches", totalFiches);
-		return "home/annee";
+	    return afficherTotalAnnee(LocalDate.now().getYear(), model);
+	}
+
+	@PostMapping("/user/annee")
+	String totalAnnee(@RequestParam("annee") int annee, Model model) {
+	    return afficherTotalAnnee(annee, model);
+	}
+
+	private String afficherTotalAnnee(int annee, Model model) {
+	    List<FicheCompta> fiches = new ArrayList<FicheCompta>();
+	    fiches.addAll(ficheComptaService.consulterFiches());
+	    double total = 0;
+	    int totalFiches = 0;
+	    for (FicheCompta fiche : fiches) {
+	        if (fiche.getDateDuSoin().getYear() == annee) {
+	            total += fiche.getFacture();
+	            totalFiches += 1;
+	        }
+	    }
+
+	    model.addAttribute("total", total);
+	    model.addAttribute("totalFiches", totalFiches);
+	    return "home/annee";
 	}
 	
 }

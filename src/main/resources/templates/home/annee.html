@@ -20,12 +20,23 @@ layout:decorate="~{layouts/main-layout}">
                 <label for="facture" class="form-label">le total a l'année en cours est de :</label>
                 <input type="text" class="form-control" id="facture"  th:value="${total}" readonly>
                 <label for="totalFiches" class="form-label mt-3">pour un total de fiches de :</label>
-                <input type="text" class="form-control" id="totalFiches"  th:value="${totalFiches}" readonly>
-
+                <input type="text" class="form-control mb-3" id="totalFiches"  th:value="${totalFiches}" readonly>
+                <div class="mb-3 col-6 offset-3 d-grid">
+                  
+                  <form th:action="@{/user/annee}" method="post">
+                      <select class="form-select" id="annee" name="annee">
+                          <option value="">Sélectionnez une année</option>
+                          <th:block th:each="annee : ${#numbers.sequence(2020, 2050)}">
+                              <option th:value="${annee}" th:text="${annee}" ></option>
+                          </th:block>
+                      </select>
+                      <button type="submit" class="btn btn-info mt-3">Valider</button>
+                  </form>
+              </div>
+              
                 <button type="button"  class="btn btn-info mt-3"><a class="nav-link" th:href="@{/user/menu}">Retour</a></button>
             </div>
         </main>
-
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
