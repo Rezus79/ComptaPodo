@@ -1,6 +1,7 @@
 package fr.ComptaPodo.controller;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -126,9 +127,13 @@ public class HomeController {
 		fiches.addAll(ficheComptaService.consulterFiches());
 		double total = 0 ;
 		int totalFiches = 0;
+		int annee = LocalDate.now().getYear();
 		for (FicheCompta fiche : fiches) {
-			total += fiche.getFacture();
-			totalFiches += 1;
+			if (fiche.getDateDuSoin().getYear() == annee) {
+			
+				total += fiche.getFacture();
+				totalFiches += 1;
+			}
 		}
 		
 		
