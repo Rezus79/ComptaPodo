@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.ComptaPodo.bll.UtilisateurService;
 import fr.ComptaPodo.bo.Utilisateur;
@@ -60,4 +61,11 @@ public class UserController {
 		model.addAttribute("utilisateurs" , users);
 		return "home/liste_manager";
 	}
+	
+	@PostMapping("/private/liste_manager")
+	public String Manager(@RequestParam("id")long id) {
+		utilisateurService.supprimerUtilisateur(id);
+		return "redirect:/private/liste_manager";
+			
+		}
 }
