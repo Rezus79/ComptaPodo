@@ -1,5 +1,8 @@
 package fr.ComptaPodo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -48,5 +51,13 @@ public class UserController {
         // Efface le contexte de sécurité
         SecurityContextHolder.clearContext();
 		return "redirect:/";
+	}
+	
+	@GetMapping("/private/liste_manager")
+	public String Manager(Model model) {
+		List<Utilisateur> users = new ArrayList<Utilisateur>();
+		users.addAll(utilisateurService.consulterUtilisateurs());
+		model.addAttribute("utilisateurs" , users);
+		return "home/liste_manager";
 	}
 }
